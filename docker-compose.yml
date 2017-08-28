@@ -1,0 +1,12 @@
+version: '2'
+services:  
+  app:
+    network_mode: "bridge"
+    build: ./
+    image: test-app    
+    volumes:
+      - ./code:/var/www/html
+      - ./log:/var/log/apache2
+    ports:
+      - "8888:80"      
+    container_name: test_app
